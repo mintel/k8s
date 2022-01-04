@@ -6,7 +6,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/jsonnet-libs/k8s/pkg/swagger"
+	"github.com/mintel/k8s/pkg/swagger"
 )
 
 // Group represents a group, like "core" or "apps"

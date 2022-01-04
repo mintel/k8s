@@ -127,7 +127,7 @@ else
     pushd "${OUTPUT_DIR}"
     if ! git diff --exit-code -s; then
         git add .
-        git commit -m "update: source github.com/jsonnet-libs/k8s@${GITHUB_SHA:0:8}"
+        git commit -m "update: source github.com/mintel/k8s@${GITHUB_SHA:0:8}"
         git push
     else
         echo "Nothing to commit."

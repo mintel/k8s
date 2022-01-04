@@ -9,9 +9,9 @@ import (
 
 	"github.com/go-clix/cli"
 	"github.com/google/go-jsonnet/formatter"
-	"github.com/jsonnet-libs/k8s/pkg/model"
-	"github.com/jsonnet-libs/k8s/pkg/render"
-	"github.com/jsonnet-libs/k8s/pkg/swagger"
+	"github.com/mintel/k8s/pkg/model"
+	"github.com/mintel/k8s/pkg/render"
+	"github.com/mintel/k8s/pkg/swagger"
 	"gopkg.in/yaml.v2"
 )
 

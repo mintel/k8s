@@ -9,9 +9,9 @@
 
     name:: name,
     description:: this.name + ' jsonnet library',
-    repository:: 'github.com/jsonnet-libs/' + this.name + this.suffix,
+    repository:: 'github.com/mintel/' + this.name + this.suffix,
     branch:: 'main',
-    site_url:: 'https://jsonnet-libs.github.io/' + this.name + this.suffix,
+    site_url:: 'https://mintel.github.io/' + this.name + this.suffix,
 
     'skel/LICENSE': importstr '../LICENSE',
 
@@ -28,7 +28,7 @@
     readme_template(name, data):: |||
       # %s Jsonnet library
 
-      This library is generated with [`k8s`](https://github.com/jsonnet-libs/k8s).
+      This library is generated with [`k8s`](https://github.com/mintel/k8s).
 
       %s
     ||| % [name, data],
