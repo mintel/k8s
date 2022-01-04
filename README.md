@@ -61,7 +61,11 @@ $ make build        # Build the image
 $ make libs/<name>  # Generate the library
 ```
 
-Set up CI and Terraform code:
+Create a GitHub repository named `<name>-libsonnet`, and add [this deploy key](./jsonnet/files/id_rsa.pub) with write permission.
+(The original version this was forked from used Terraform Cloud to automate the creation of GitHub repos. We don't have Terraform Cloud, so for now
+this is a manual process.)
+
+Set up CI code:
 
 ```
 $ make configure
