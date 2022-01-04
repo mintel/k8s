@@ -48,7 +48,7 @@ local terraform = {
 
 local libJob(name) = {
   name: 'Generate ' + name + ' Jsonnet library and docs',
-  needs: 'repos',
+  // needs: 'repos',
   'runs-on': 'ubuntu-latest',
   steps: [
     { uses: 'actions/checkout@v2' },
@@ -81,8 +81,8 @@ function(libs) {
         [lib.name]: libJob(lib.name)
         for lib in libs
       } + {
-        repos: terraform.job,
-        repos_with_pages: terraform.job + terraform.withPages(std.sort([lib.name for lib in libs])),
+        // repos: terraform.job,
+        // repos_with_pages: terraform.job + terraform.withPages(std.sort([lib.name for lib in libs])),
         debugging: {
           name: 'Debugging Github Action values',
           'runs-on': 'ubuntu-latest',
