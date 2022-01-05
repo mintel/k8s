@@ -8,6 +8,18 @@
     - "run": "echo ${{ github.repository }}"
     - "run": "echo ${{ github.ref }}"
     - "run": "echo ${{ github.event_name }}"
+  "kube-prometheus":
+    "name": "Generate kube-prometheus Jsonnet library and docs"
+    "runs-on": "ubuntu-latest"
+    "steps":
+    - "uses": "actions/checkout@v2"
+    - "env":
+        "DIFF": "true"
+        "GEN_COMMIT": "${{ github.ref == 'refs/heads/master' && github.repository == 'mintel/k8s' }}"
+        "GIT_COMMITTER_EMAIL": "73711944+minchine@users.noreply.github.com"
+        "GIT_COMMITTER_NAME": "minchine"
+        "SSH_KEY": "${{ secrets.DEPLOY_KEY }}"
+      "run": "make build libs/kube-prometheus"
   "kubernetes-external-secrets":
     "name": "Generate kubernetes-external-secrets Jsonnet library and docs"
     "runs-on": "ubuntu-latest"
