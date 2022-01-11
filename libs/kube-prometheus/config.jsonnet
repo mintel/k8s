@@ -17,6 +17,7 @@ config.new(
         'https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/release-0.8/manifests/setup/prometheus-operator-0thanosrulerCustomResourceDefinition.yaml',
       ],
       localName: 'kube_prometheus',
+      patchDir: 'custom',
     },
     {
       output: '0.9',
@@ -32,6 +33,7 @@ config.new(
         'https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/release-0.9/manifests/setup/prometheus-operator-0thanosrulerCustomResourceDefinition.yaml',
       ],
       localName: 'kube_prometheus',
+      patchDir: 'custom',
     },
     {
       output: '0.10',
@@ -47,6 +49,7 @@ config.new(
         'https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/release-0.10/manifests/setup/0thanosrulerCustomResourceDefinition.yaml',
       ],
       localName: 'kube_prometheus',
+      patchDir: 'custom',
     },
   ]
 )
