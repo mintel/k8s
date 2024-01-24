@@ -3,6 +3,8 @@ package swagger
 import (
 	"io/ioutil"
 	"net/http"
+	"os"
+	"strings"
 )
 
 type Loader interface {
@@ -10,14 +12,25 @@ type Loader interface {
 }
 
 func Load(loader Loader, url string) (Definitions, error) {
-	r, err := http.Get(url)
-	if err != nil {
-		return nil, err
-	}
+	var data []byte
+	if strings.HasPrefix(url, "file://") {
+		path := strings.TrimPrefix(url, "file://")
 
-	data, err := ioutil.ReadAll(r.Body)
-	if err != nil {
-		return nil, err
+		var err error
+		data, err = os.ReadFile(path)
+		if err != nil {
+			return nil, err
+		}
+	} else {
+		r, err := http.Get(url)
+		if err != nil {
+			return nil, err
+		}
+
+		data, err = ioutil.ReadAll(r.Body)
+		if err != nil {
+			return nil, err
+		}
 	}
 
 	return loader.Load(data)
